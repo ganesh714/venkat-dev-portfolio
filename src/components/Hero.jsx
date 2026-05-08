@@ -130,11 +130,11 @@ const Hero = () => {
         >
           <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
             {/* Bottom Layer: Pulsing Background Circle */}
-            <div className="absolute inset-0 m-auto w-64 h-64 md:w-80 md:h-80 rounded-full border border-indigo-200/50 dark:border-indigo-500/30 bg-indigo-50/50 dark:bg-indigo-900/10 shadow-[0_0_40px_rgba(79,70,229,0.15)] dark:shadow-[0_0_50px_rgba(79,70,229,0.15)] animate-[pulse_4s_ease-in-out_infinite] z-0" />
+            <div className="absolute inset-0 m-auto w-72 h-72 md:w-96 md:h-96 rounded-full border border-indigo-200/50 dark:border-indigo-500/30 bg-indigo-50/50 dark:bg-indigo-900/10 shadow-[0_0_40px_rgba(79,70,229,0.15)] dark:shadow-[0_0_50px_rgba(79,70,229,0.15)] animate-[pulse_4s_ease-in-out_infinite] z-0" />
             
-            {/* Middle Layer: Photo Placeholder */}
-            <div className="absolute inset-0 z-10 flex items-end justify-center">
-              <img src={profilePic} alt="Venkata Ganesh" className="w-full h-full object-contain drop-shadow-2xl" />
+            {/* Middle Layer: Photo */}
+            <div className="absolute inset-0 z-10 flex items-end justify-center -translate-y-4 md:-translate-y-8">
+              <img src={profilePic} alt="Venkata Ganesh" className="w-[95%] h-[95%] md:w-full md:h-full object-contain drop-shadow-2xl" />
             </div>
 
             {/* Top Layer: Floating Icons */}
