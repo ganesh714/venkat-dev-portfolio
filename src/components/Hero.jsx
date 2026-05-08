@@ -5,7 +5,7 @@ import profilePic from '../assets/portrait.png';
 const Hero = () => {
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 1000], [0, 300]);
-  
+
   // Mouse tracking spotlight
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const springConfig = { damping: 25, stiffness: 200, mass: 0.5 };
@@ -26,8 +26,8 @@ const Hero = () => {
   // Staggered text animations
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" }
     }
@@ -53,20 +53,20 @@ const Hero = () => {
       />
 
       {/* Subtle background glow with Parallax */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 pointer-events-none -z-10"
         style={{ y: yBg }}
       >
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-200/20 dark:bg-indigo-500/5 rounded-full blur-[120px]" />
-        
+
         {/* Floating Shapes - More subtle */}
-        <motion.div 
-          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} 
+        <motion.div
+          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/3 right-1/4 w-24 h-24 rounded-2xl border border-indigo-200 dark:border-indigo-500/20 bg-white/40 dark:bg-indigo-500/5 backdrop-blur-sm -rotate-12"
         />
-        <motion.div 
-          animate={{ y: [0, 30, 0], rotate: [0, -10, 0] }} 
+        <motion.div
+          animate={{ y: [0, 30, 0], rotate: [0, -10, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute bottom-1/3 left-1/4 w-32 h-32 rounded-full border border-slate-200 dark:border-slate-500/10 bg-white/40 dark:bg-slate-500/5 backdrop-blur-sm"
         />
@@ -74,7 +74,7 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 w-full">
         {/* Left Side: Text Content */}
-        <motion.div 
+        <motion.div
           className="text-center lg:text-left lg:w-3/5"
           variants={containerVariants}
           initial="hidden"
@@ -129,9 +129,9 @@ const Hero = () => {
           className="relative lg:w-2/5 flex justify-center items-center mt-12 lg:mt-0"
         >
           <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
-            {/* Bottom Layer: Pulsing Background Circle */}
-            <div className="absolute inset-0 m-auto w-72 h-72 md:w-96 md:h-96 rounded-full border border-indigo-200/50 dark:border-indigo-500/30 bg-indigo-50/50 dark:bg-indigo-900/10 shadow-[0_0_40px_rgba(79,70,229,0.15)] dark:shadow-[0_0_50px_rgba(79,70,229,0.15)] animate-[pulse_4s_ease-in-out_infinite] z-0" />
-            
+            {/* Bottom Layer: Pulsing Background Ring */}
+            <div className="absolute inset-0 m-auto w-64 h-64 md:w-80 md:h-80 rounded-full border-4 md:border-[8px] border-indigo-400/30 dark:border-indigo-500/30 bg-transparent shadow-[0_0_40px_rgba(79,70,229,0.15),inset_0_0_40px_rgba(79,70,229,0.15)] animate-[pulse_4s_ease-in-out_infinite] z-0" />
+
             {/* Middle Layer: Photo */}
             <div className="absolute inset-0 z-10 flex items-end justify-center -translate-y-4 md:-translate-y-8">
               <img src={profilePic} alt="Venkata Ganesh" className="w-[95%] h-[95%] md:w-full md:h-full object-contain drop-shadow-2xl" />
@@ -181,7 +181,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
