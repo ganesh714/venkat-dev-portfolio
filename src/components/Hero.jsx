@@ -120,29 +120,70 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Side: Profile Photo Placeholder */}
+        {/* Right Side: Layered Profile Composition */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative lg:w-2/5 flex justify-center lg:justify-end"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative lg:w-2/5 flex justify-center items-center mt-12 lg:mt-0"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-            {/* Sleek Glowing Border */}
-            <div className="absolute inset-0 rounded-[40px] bg-gradient-to-tr from-indigo-600 to-purple-600 blur-2xl opacity-20 animate-pulse" />
-            <div className="absolute inset-0 rounded-[40px] border-2 border-indigo-500/20 dark:border-indigo-400/20" />
+          <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
+            {/* Bottom Layer: Pulsing Background Circle */}
+            <div className="absolute inset-0 m-auto w-64 h-64 md:w-80 md:h-80 rounded-full border border-indigo-200/50 dark:border-indigo-500/30 bg-indigo-50/50 dark:bg-indigo-900/10 shadow-[0_0_40px_rgba(79,70,229,0.15)] dark:shadow-[0_0_50px_rgba(79,70,229,0.15)] animate-[pulse_4s_ease-in-out_infinite] z-0" />
             
-            {/* The Placeholder Container */}
-            <div className="absolute inset-2 rounded-[32px] bg-white dark:bg-slate-900 overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl flex items-center justify-center">
-              <span className="text-slate-400 dark:text-slate-600 font-bold uppercase tracking-widest text-xs px-4 text-center">
-                Profile Photo
-              </span>
+            {/* Middle Layer: Photo Placeholder */}
+            <div className="absolute inset-0 z-10 flex items-end justify-center">
+              {/* Replace this div with the actual background-removed image tag:
+                  <img src={yourPhoto} alt="Venkata Ganesh" className="w-full h-full object-contain drop-shadow-2xl" />
+              */}
+              <div className="w-56 h-64 md:w-72 md:h-80 bg-slate-200 dark:bg-slate-800 rounded-t-full rounded-b-[40px] flex items-center justify-center shadow-2xl border-b-4 border-indigo-500/20">
+                <span className="text-slate-500 dark:text-slate-400 font-bold tracking-widest text-sm uppercase text-center px-4">
+                  Your Photo Here
+                </span>
+              </div>
             </div>
-            
-            {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-600/5 rounded-full blur-2xl" />
+
+            {/* Top Layer: Floating Icons */}
+            <div className="absolute inset-0 z-20 pointer-events-none">
+              {/* Code Icon */}
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+                className="absolute top-[10%] left-[5%] md:top-[15%] md:left-[10%] bg-white dark:bg-slate-900 p-3 md:p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-indigo-600 dark:text-indigo-400"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </motion.div>
+
+              {/* Database Icon */}
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute top-[5%] right-[10%] md:top-[10%] md:right-[15%] bg-white dark:bg-slate-900 p-3 md:p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-blue-500 dark:text-blue-400"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </motion.div>
+
+              {/* Cloud Icon */}
+              <motion.div
+                animate={{ y: [0, -18, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-[20%] left-[-5%] md:bottom-[25%] md:left-[-2%] bg-white dark:bg-slate-900 p-3 md:p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-purple-500 dark:text-purple-400"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+              </motion.div>
+
+              {/* Network/Graph Icon */}
+              <motion.div
+                animate={{ y: [0, -14, 0] }}
+                transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                className="absolute bottom-[10%] right-[0%] md:bottom-[15%] md:right-[5%] bg-white dark:bg-slate-900 p-3 md:p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-pink-500 dark:text-pink-400"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
+
       </div>
 
       {/* Scroll indicator */}
