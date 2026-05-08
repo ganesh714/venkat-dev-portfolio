@@ -1,14 +1,24 @@
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
 const Hero = () => {
+  const { scrollY } = useScroll();
+  // Move the background glow up slightly slower than the scroll speed
+  const yBg = useTransform(scrollY, [0, 1000], [0, 300]);
+
   return (
     <section
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-16 relative overflow-hidden"
     >
-      {/* Subtle background glow */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Subtle background glow with Parallax */}
+      <motion.div 
+        className="absolute inset-0 pointer-events-none"
+        style={{ y: yBg }}
+      >
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]" />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 max-w-3xl">
         {/* Greeting */}
