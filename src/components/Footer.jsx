@@ -9,23 +9,28 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-slate-950 py-8 border-t border-slate-800/50 shadow-[0_-4px_20px_rgba(59,130,246,0.1)]">
-      <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
-        {/* Empty div to balance flexbox if button is on the right */}
-        <div className="hidden sm:block w-10"></div>
+    <footer className="bg-white dark:bg-slate-950 py-10 border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between">
+        
+        {/* Logo - Matching Navbar */}
+        <div className="mb-4 sm:mb-0">
+          <a href="#" className="text-lg font-extrabold tracking-tight text-slate-400 dark:text-slate-600 select-none">
+            &lt;VG /&gt;
+          </a>
+        </div>
         
         {/* Centered Text */}
-        <p className="text-slate-500 text-sm text-center mb-4 sm:mb-0">
-          &copy; 2026 Venkata Ganesh. Built with React &amp; Tailwind.
+        <p className="text-slate-500 dark:text-slate-500 text-sm font-medium text-center">
+          &copy; 2026 Venkata Ganesh. All rights reserved.
         </p>
 
         {/* Back to Top Button */}
         <button 
           onClick={scrollToTop}
-          className="group flex items-center justify-center w-10 h-10 bg-slate-800/50 hover:bg-slate-700 text-slate-400 hover:text-blue-400 border border-slate-700/50 hover:border-blue-500/50 rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] focus:outline-none"
+          className="mt-4 sm:mt-0 group flex items-center justify-center w-10 h-10 bg-slate-50 dark:bg-slate-900 text-slate-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/30 rounded-xl transition-all duration-300 focus:outline-none"
           aria-label="Back to top"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
           </svg>
         </button>
