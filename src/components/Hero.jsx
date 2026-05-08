@@ -90,13 +90,12 @@ const Hero = () => {
 
         {/* Subtitle with gradient */}
         <motion.p variants={textVariants} className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-8">
-          Software Engineer Trainee &amp; AIML Enthusiast
+          Full Stack Developer &amp; Software Engineer Trainee
         </motion.p>
 
         {/* Description */}
         <motion.p variants={textVariants} className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-          I build modern web applications and explore the intersection of
-          software engineering and artificial intelligence.
+          I build modern web applications with expertise in Angular and React.js, focusing on modular system architecture and clean code.
         </motion.p>
 
         {/* CTA buttons */}
