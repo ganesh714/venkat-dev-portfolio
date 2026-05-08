@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import profilePic from '../assets/portrait.png';
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -133,14 +134,7 @@ const Hero = () => {
             
             {/* Middle Layer: Photo Placeholder */}
             <div className="absolute inset-0 z-10 flex items-end justify-center">
-              {/* Replace this div with the actual background-removed image tag:
-                  <img src={yourPhoto} alt="Venkata Ganesh" className="w-full h-full object-contain drop-shadow-2xl" />
-              */}
-              <div className="w-56 h-64 md:w-72 md:h-80 bg-slate-200 dark:bg-slate-800 rounded-t-full rounded-b-[40px] flex items-center justify-center shadow-2xl border-b-4 border-indigo-500/20">
-                <span className="text-slate-500 dark:text-slate-400 font-bold tracking-widest text-sm uppercase text-center px-4">
-                  Your Photo Here
-                </span>
-              </div>
+              <img src={profilePic} alt="Venkata Ganesh" className="w-full h-full object-contain drop-shadow-2xl" />
             </div>
 
             {/* Top Layer: Floating Icons */}
