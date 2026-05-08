@@ -45,7 +45,7 @@ const Contact = () => {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:your.email@example.com"
+              href="mailto:evvganesh1@gmail.com"
               className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white border border-blue-500/30 rounded-xl transition-colors duration-300 relative overflow-hidden"
               aria-label="Send an email"
             >
@@ -59,7 +59,7 @@ const Contact = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://github.com"
+              href="https://github.com/ganesh714"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3 bg-slate-700/50 hover:bg-slate-600/80 text-slate-200 border border-slate-600/50 rounded-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(148,163,184,0.4)]"
@@ -75,7 +75,7 @@ const Contact = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/venkata-ganesh-934072291"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3 bg-blue-500/10 hover:bg-blue-500/30 text-blue-400 border border-blue-500/30 rounded-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
