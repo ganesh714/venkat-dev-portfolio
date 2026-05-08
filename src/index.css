@@ -12,26 +12,34 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 5px;
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155; /* slate-700 */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #94a3b8; /* slate-400 */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569; /* slate-600 */
 }
 
 /* Text Selection */
 ::selection {
-  background-color: rgba(59, 130, 246, 0.4);
-  color: #fff;
+  background-color: rgba(79, 70, 229, 0.2); /* indigo-600 with opacity */
+  color: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {
