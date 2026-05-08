@@ -43,7 +43,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 relative overflow-hidden bg-slate-50 dark:bg-slate-950"
+      className="min-h-screen flex flex-col items-center justify-center px-4 pt-20 relative overflow-hidden bg-slate-50 dark:bg-slate-950"
     >
       {/* Interactive Spotlight - Subtler and theme-aware */}
       <motion.div
@@ -71,52 +71,79 @@ const Hero = () => {
         />
       </motion.div>
 
-      <motion.div 
-        className="relative z-10 max-w-4xl"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Greeting */}
-        <motion.p variants={textVariants} className="text-sm sm:text-base font-semibold text-indigo-600 dark:text-indigo-400 tracking-[0.2em] uppercase mb-4">
-          Hello, I&apos;m
-        </motion.p>
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 w-full">
+        {/* Left Side: Text Content */}
+        <motion.div 
+          className="text-center lg:text-left lg:w-3/5"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Greeting */}
+          <motion.p variants={textVariants} className="text-sm sm:text-base font-semibold text-indigo-600 dark:text-indigo-400 tracking-[0.2em] uppercase mb-4">
+            Hello, I&apos;m
+          </motion.p>
 
-        {/* Name */}
-        <motion.h1 variants={textVariants} className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
-          Venkata Ganesh
-        </motion.h1>
+          {/* Name */}
+          <motion.h1 variants={textVariants} className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
+            Venkata Ganesh
+          </motion.h1>
 
-        {/* Subtitle - Clean indigo color */}
-        <motion.p variants={textVariants} className="text-xl sm:text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-300 mb-8">
-          Full Stack Developer &amp; <span className="text-indigo-600 dark:text-indigo-400">Software Engineer Trainee</span>
-        </motion.p>
+          {/* Subtitle - Clean indigo color */}
+          <motion.p variants={textVariants} className="text-xl sm:text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-300 mb-8">
+            Full Stack Developer &amp; <span className="text-indigo-600 dark:text-indigo-400">Software Engineer Trainee</span>
+          </motion.p>
 
-        {/* Description */}
-        <motion.p variants={textVariants} className="text-slate-500 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          I build modern web applications with expertise in Angular and React.js, focusing on modular system architecture and clean, high-performance code.
-        </motion.p>
+          {/* Description */}
+          <motion.p variants={textVariants} className="text-slate-500 dark:text-slate-400 text-base sm:text-lg max-w-2xl lg:mx-0 mx-auto mb-10 leading-relaxed">
+            I build modern web applications with expertise in Angular and React.js, focusing on modular system architecture and clean, high-performance code.
+          </motion.p>
 
-        {/* CTA buttons */}
-        <motion.div variants={textVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="#projects"
-            className="px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all duration-300"
-          >
-            View Projects
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="#contact"
-            className="px-10 py-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold rounded-xl shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300"
-          >
-            Let&apos;s Connect
-          </motion.a>
+          {/* CTA buttons */}
+          <motion.div variants={textVariants} className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4">
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="#projects"
+              className="px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all duration-300"
+            >
+              View Projects
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="#contact"
+              className="px-10 py-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold rounded-xl shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300"
+            >
+              Let&apos;s Connect
+            </motion.a>
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        {/* Right Side: Profile Photo Placeholder */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="relative lg:w-2/5 flex justify-center lg:justify-end"
+        >
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            {/* Sleek Glowing Border */}
+            <div className="absolute inset-0 rounded-[40px] bg-gradient-to-tr from-indigo-600 to-purple-600 blur-2xl opacity-20 animate-pulse" />
+            <div className="absolute inset-0 rounded-[40px] border-2 border-indigo-500/20 dark:border-indigo-400/20" />
+            
+            {/* The Placeholder Container */}
+            <div className="absolute inset-2 rounded-[32px] bg-white dark:bg-slate-900 overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl flex items-center justify-center">
+              <span className="text-slate-400 dark:text-slate-600 font-bold uppercase tracking-widest text-xs px-4 text-center">
+                Profile Photo
+              </span>
+            </div>
+            
+            {/* Decorative element */}
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-600/5 rounded-full blur-2xl" />
+          </div>
+        </motion.div>
+      </div>
 
       {/* Scroll indicator */}
       <motion.div 
