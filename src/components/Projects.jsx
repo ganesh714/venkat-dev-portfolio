@@ -4,22 +4,22 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 const projects = [
   {
     title: 'College Intranet Portal',
-    description: 'A comprehensive MERN stack intranet portal developed for secure campus administration and seamless student access.',
-    techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
+    description: 'Centralized academic portal for managing coursework, timetables, and announcements with role-based access. Refactored the backend into modular, SOLID-compliant services and developed core frontend modules using React.js. (Dec 2025 – Present)',
+    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     github: '#',
     demo: '#'
   },
   {
-    title: 'ClassMate',
-    description: 'A distinct, full-stack student productivity application designed to streamline academic workflows and collaborative task management.',
-    techStack: ['React', 'Node.js', 'Tailwind CSS', 'MongoDB'],
+    title: 'ClassMate – Productivity Web App',
+    description: 'Full-stack student productivity tool with chatbot, notes, tasks, and attendance modules. Developed in a team during a 2-month internship.',
+    techStack: ['FastAPI', 'MongoDB', 'HTML/CSS', 'JavaScript'],
     github: '#',
     demo: '#'
   },
   {
-    title: 'Java Backend (Many-to-Many)',
-    description: 'A robust Spring Boot backend architecture implementing complex many-to-many relational database mappings and optimized RESTful APIs.',
-    techStack: ['Java', 'Spring Boot', 'Hibernate/JPA', 'MySQL'],
+    title: 'Movie Streaming Backend Service',
+    description: 'Implemented advanced JPA relationships using join entity and composite keys. Enhanced API efficiency with JPQL aggregation queries and serialization fixes.',
+    techStack: ['Java', 'Spring Boot', 'JPA/Hibernate', 'MySQL'],
     github: '#',
     demo: '#'
   }
