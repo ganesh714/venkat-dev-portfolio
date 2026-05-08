@@ -61,7 +61,7 @@ const Experience = () => {
               <div className="md:flex items-start justify-between">
                 {/* Timeline connector for mobile */}
                 <div className="absolute left-0 top-0 h-full w-px bg-slate-200 dark:bg-slate-800 md:hidden"></div>
-                <div className="absolute left-[-5px] top-2 h-3 w-3 rounded-full bg-indigo-600 dark:bg-indigo-400 md:hidden"></div>
+                <div className="absolute left-0 -translate-x-1/2 top-2 h-3 w-3 rounded-full bg-indigo-600 dark:bg-indigo-400 md:hidden"></div>
 
                 <div className="md:w-1/2 mb-6 md:mb-0 md:text-right md:pr-12 pt-1">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.title}</h3>
@@ -70,7 +70,7 @@ const Experience = () => {
                 </div>
                 
                 {/* Desktop timeline marker */}
-                <div className="hidden md:block w-4 h-4 rounded-full bg-indigo-600 dark:bg-indigo-400 absolute left-1/2 -ml-2 top-3 z-10 border-4 border-slate-50 dark:border-slate-950 box-content"></div>
+                <div className="hidden md:block w-4 h-4 rounded-full bg-indigo-600 dark:bg-indigo-400 absolute left-1/2 -translate-x-1/2 top-3 z-10 border-4 border-slate-50 dark:border-slate-950 box-content"></div>
                 
                 <div className="md:w-1/2 md:pl-12">
                   <div className="bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-all duration-300 shadow-sm hover:shadow-md">
