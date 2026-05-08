@@ -1,3 +1,6 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
 const skillGroups = [
   {
     title: 'Backend & Architecture',
@@ -44,7 +47,13 @@ const skillGroups = [
 const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-slate-900/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.6 }}
+      >
         {/* Section heading */}
         <div className="text-center mb-14">
           <p className="text-xs font-semibold tracking-widest uppercase text-slate-500 mb-2">
@@ -100,9 +109,10 @@ const Skills = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
+
 
 export default Skills;
