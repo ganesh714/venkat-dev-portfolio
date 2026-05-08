@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-const bioText = "I am a 3rd-year B.Tech AIML student at Aditya University and a Software Engineer Trainee at Coding Maxima. I specialize in backend architecture, Low-Level Design (LLD), and building robust APIs with Java (Spring Boot) and Python (FastAPI). Beyond standard web development, I actively research and implement advanced AI architectures like LLMs, RAG, and Mixture of Experts (MoE). When I am not writing code, I am usually creating tech content for my YouTube channel, evgdevs, or diving into 3D modeling.";
+const bioText = "Full Stack Developer with expertise in Angular and React.js, focusing on modular system architecture, clean code practices, and system design. Experienced in building role-based web platforms, restructuring backend systems using SOLID principles, and delivering maintainable frontend modules. Familiar with AI-driven concepts such as Retrieval-Augmented Generation and agent-based workflows, with current focus on real-world development through internships and production projects.";
 
 const Typewriter = ({ text }) => {
   const [displayedText, setDisplayedText] = useState('');
