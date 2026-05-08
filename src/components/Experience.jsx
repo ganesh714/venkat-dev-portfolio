@@ -47,7 +47,7 @@ const Experience = () => {
 
         <div className="max-w-4xl mx-auto relative">
           {/* Main timeline line for desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-px bg-slate-200 dark:bg-slate-800 z-0"></div>
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-slate-200 dark:bg-slate-800 z-0"></div>
 
           {experiences.map((exp, index) => (
             <motion.div 
@@ -60,7 +60,7 @@ const Experience = () => {
             >
               <div className="md:flex items-center justify-between">
                 {/* Timeline connector for mobile */}
-                <div className="absolute left-0 top-0 h-full w-px bg-slate-200 dark:bg-slate-800 md:hidden"></div>
+                <div className="absolute left-0 top-0 h-full w-0.5 bg-slate-200 dark:bg-slate-800 md:hidden"></div>
                 <div className="absolute left-0 -translate-x-1/2 top-2 h-3 w-3 rounded-full bg-indigo-600 dark:bg-indigo-400 md:hidden"></div>
 
                 <div className="md:w-1/2 mb-6 md:mb-0 md:text-right md:pr-12">
