@@ -43,11 +43,11 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-16 relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 relative overflow-hidden bg-slate-50 dark:bg-slate-950"
     >
-      {/* Interactive Spotlight */}
+      {/* Interactive Spotlight - Subtler and theme-aware */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 w-[300px] h-[300px] rounded-full bg-blue-600/10 blur-[100px] z-0"
+        className="pointer-events-none fixed top-0 left-0 w-[400px] h-[400px] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[120px] z-0"
         style={{ x: mouseX, y: mouseY }}
       />
 
@@ -56,63 +56,62 @@ const Hero = () => {
         className="absolute inset-0 pointer-events-none -z-10"
         style={{ y: yBg }}
       >
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-200/20 dark:bg-indigo-500/5 rounded-full blur-[120px]" />
         
-        {/* Floating Shapes */}
+        {/* Floating Shapes - More subtle */}
         <motion.div 
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }} 
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/3 right-1/4 w-24 h-24 rounded-2xl border border-blue-500/20 bg-blue-500/5 backdrop-blur-sm -rotate-12"
+          className="absolute top-1/3 right-1/4 w-24 h-24 rounded-2xl border border-indigo-200 dark:border-indigo-500/20 bg-white/40 dark:bg-indigo-500/5 backdrop-blur-sm -rotate-12"
         />
         <motion.div 
           animate={{ y: [0, 30, 0], rotate: [0, -10, 0] }} 
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-1/3 left-1/4 w-32 h-32 rounded-full border border-purple-500/20 bg-purple-500/5 backdrop-blur-sm"
+          className="absolute bottom-1/3 left-1/4 w-32 h-32 rounded-full border border-slate-200 dark:border-slate-500/10 bg-white/40 dark:bg-slate-500/5 backdrop-blur-sm"
         />
       </motion.div>
 
       <motion.div 
-        className="relative z-10 max-w-3xl"
+        className="relative z-10 max-w-4xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Greeting */}
-        <motion.p variants={textVariants} className="text-sm sm:text-base font-medium text-slate-400 tracking-widest uppercase mb-4">
+        <motion.p variants={textVariants} className="text-sm sm:text-base font-semibold text-indigo-600 dark:text-indigo-400 tracking-[0.2em] uppercase mb-4">
           Hello, I&apos;m
         </motion.p>
 
         {/* Name */}
-        <motion.h1 variants={textVariants} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-tight mb-6 drop-shadow-lg">
+        <motion.h1 variants={textVariants} className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
           Venkata Ganesh
         </motion.h1>
 
-        {/* Subtitle with gradient */}
-        <motion.p variants={textVariants} className="text-lg sm:text-xl md:text-2xl font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-8">
-          Full Stack Developer &amp; Software Engineer Trainee
+        {/* Subtitle - Clean indigo color */}
+        <motion.p variants={textVariants} className="text-xl sm:text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-300 mb-8">
+          Full Stack Developer &amp; <span className="text-indigo-600 dark:text-indigo-400">Software Engineer Trainee</span>
         </motion.p>
 
         {/* Description */}
-        <motion.p variants={textVariants} className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-          I build modern web applications with expertise in Angular and React.js, focusing on modular system architecture and clean code.
+        <motion.p variants={textVariants} className="text-slate-500 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+          I build modern web applications with expertise in Angular and React.js, focusing on modular system architecture and clean, high-performance code.
         </motion.p>
 
         {/* CTA buttons */}
         <motion.div variants={textVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             href="#projects"
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300"
+            className="px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all duration-300"
           >
             View Projects
           </motion.a>
           <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             href="#contact"
-            className="px-8 py-3 border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white font-semibold rounded-lg transition-all duration-300 bg-slate-800/30 backdrop-blur-sm"
+            className="px-10 py-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold rounded-xl shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300"
           >
             Let&apos;s Connect
           </motion.a>
@@ -124,21 +123,24 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500"
       >
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <motion.svg
+        <span className="text-xs tracking-widest uppercase font-medium">Scroll</span>
+        <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </motion.svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+          </svg>
+        </motion.div>
       </motion.div>
     </section>
   );
