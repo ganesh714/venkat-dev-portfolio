@@ -136,7 +136,7 @@ const Hero = () => {
             <div className="absolute inset-0 z-10 flex items-end justify-center -translate-y-4 md:-translate-y-8">
               <img src={profilePic} alt="Venkata Ganesh" className="w-[105%] h-[105%] md:w-[115%] md:h-[115%] max-w-none object-contain drop-shadow-2xl relative z-10" />
               {/* Fade out gradient at the bottom */}
-              <div className="absolute -bottom-4 md:-bottom-8 left-1/2 -translate-x-1/2 w-[120%] h-1/3 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent dark:from-slate-950 dark:via-slate-950/80 pointer-events-none z-20" />
+              <div className="absolute bottom-0 md:bottom-4 left-1/2 -translate-x-1/2 w-[120%] h-1/3 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent dark:from-slate-950 dark:via-slate-950/80 pointer-events-none z-20" />
             </div>
 
             {/* Top Layer: Floating Icons */}
