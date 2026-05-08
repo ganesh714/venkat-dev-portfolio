@@ -44,35 +44,67 @@ const skillGroups = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
 const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-slate-900/50">
-      <motion.div
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-14">
+        <motion.div 
+          className="text-center mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="text-xs font-semibold tracking-widest uppercase text-slate-500 mb-2">
             What I work with
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white inline-block relative">
             Technical{' '}
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
               Skills
             </span>
+            <motion.div 
+              className="absolute -bottom-2 left-0 h-1 bg-purple-500 rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            />
           </h2>
-        </div>
+        </motion.div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+        >
           {skillGroups.map((group) => (
-            <div
+            <motion.div
               key={group.title}
-              className={`relative bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 transition-all duration-300 ${group.glow} cursor-default`}
+              variants={cardVariants}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className={`relative bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 transition-colors duration-300 ${group.glow} cursor-default`}
             >
               {/* Card header */}
               <div className="flex items-center gap-3 mb-6">
@@ -83,36 +115,36 @@ const Skills = () => {
               </div>
 
               {/* Skill badges + progress bars */}
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {group.skills.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-1.5">
-                      <span
-                        className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${group.accent}`}
-                      >
+                      <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${group.accent}`}>
                         {skill.name}
                       </span>
-                      <span className="text-xs text-slate-500 font-mono">
+                      <span className="text-xs text-slate-400 font-mono font-medium">
                         {skill.level}%
                       </span>
                     </div>
                     {/* Progress bar */}
-                    <div className="h-1.5 w-full rounded-full bg-slate-700/60">
-                      <div
-                        className={`h-1.5 rounded-full ${group.bar} transition-all duration-700`}
-                        style={{ width: `${skill.level}%` }}
+                    <div className="h-1.5 w-full rounded-full bg-slate-700/60 overflow-hidden">
+                      <motion.div
+                        className={`h-full rounded-full ${group.bar}`}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                       />
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };
-
 
 export default Skills;
