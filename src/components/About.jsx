@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import avatar from '../assets/avatar.png';
 
 const bioText = "Full Stack Developer with expertise in Angular and React.js, focusing on modular system architecture, clean code practices, and system design. Experienced in building role-based web platforms, restructuring backend systems using SOLID principles, and delivering maintainable frontend modules. Familiar with AI-driven concepts such as Retrieval-Augmented Generation and agent-based workflows, with current focus on real-world development through internships and production projects.";
@@ -36,8 +36,22 @@ const Typewriter = ({ text }) => {
 };
 
 const About = () => {
+  const { scrollYProgress } = useScroll();
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
   return (
-    <section id="about" className="py-24 container mx-auto px-4 relative z-10 bg-slate-50 dark:bg-slate-950">
+    <section id="about" className="py-24 container mx-auto px-4 relative z-10 bg-slate-50 dark:bg-slate-950 overflow-hidden">
+      {/* Parallax Background Elements */}
+      <motion.div 
+        style={{ y: y1 }}
+        className="absolute top-20 right-10 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl -z-10"
+      />
+      <motion.div 
+        style={{ y: y2 }}
+        className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10"
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
