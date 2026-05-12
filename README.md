@@ -1,16 +1,59 @@
-# React + Vite
+# Venkata Ganesh | Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive, and high-performance developer portfolio built with React.js, Tailwind CSS, and Framer Motion. This portfolio showcases my projects, skills, and professional experience with advanced parallax scrolling and smooth animations.
 
-Currently, two official plugins are available:
+🚀 **Live Deployed Site**: [https://venkat-dev-portfolio.vercel.app/](https://venkat-dev-portfolio.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
 
-## React Compiler
+- **Frontend**: React.js 18
+- **Styling**: Tailwind CSS (Utility-first CSS)
+- **Animations**: Framer Motion (Scroll-linked animations, Parallax effects)
+- **Build Tool**: Vite
+- **Icons**: Lucide React & Custom SVG
+- **Deployment**: Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+- **Advanced Parallax Scrolling**: Custom scroll-linked animations in the Projects and About sections.
+- **Sticky Project Navigation**: A premium project showcase layout with sticky sidebars and dynamic content switching.
+- **Dark Mode Support**: Fully responsive design with seamless theme switching.
+- **Responsive Timeline**: A professional experience timeline that adapts to all device sizes.
+- **Modern UI/UX**: Focus on clean typography, vibrant gradients, and micro-interactions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Local Setup Instructions
+
+Follow these steps to get the project running on your local machine:
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/ganesh714/venkat-dev-portfolio.git
+cd venkat-dev-portfolio
+```
+
+### 2. Install Dependencies
+Make sure you have [Node.js](https://nodejs.org/) installed.
+```bash
+npm install
+```
+
+### 3. Run the Development Server
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`.
+
+### 4. Build for Production
+To create a production-ready bundle:
+```bash
+npm run build
+```
+
+## 👤 Author
+
+**Venkata Ganesh**
+- **GitHub**: [@ganesh714](https://github.com/ganesh714)
+- **LinkedIn**: [Venkata Ganesh](https://www.linkedin.com/in/venkata-ganesh-9a2503290/)
+
+---
+*Created with ❤️ by Venkata Ganesh*
