@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 // React Icons
 import { FaReact, FaAngular, FaNodeJs, FaJava, FaPython, FaUnity, FaAndroid, FaGitAlt, FaGithub, FaDatabase, FaBrain, FaCubes, FaRobot } from 'react-icons/fa';
-import { SiJavascript, SiMongodb, SiMysql, SiExpress, SiCplusplus, SiBlender, SiFastapi } from 'react-icons/si';
+import { SiJavascript, SiMongodb, SiMysql, SiExpress, SiCplusplus, SiBlender, SiFastapi, SiSpringboot } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import { BiNetworkChart, BiCodeAlt } from 'react-icons/bi';
 
@@ -15,6 +15,7 @@ const skillCategories = [
     skills: [
       { name: 'React.js', icon: <FaReact className="text-[#61DAFB]" /> },
       { name: 'Angular', icon: <FaAngular className="text-[#DD0031]" /> },
+      { name: 'Spring Boot', icon: <SiSpringboot className="text-[#6DB33F]" /> },
       { name: 'Node.js', icon: <FaNodeJs className="text-[#339933]" /> },
       { name: 'Express.js', icon: <SiExpress className="text-slate-700 dark:text-slate-300" /> },
       { name: 'FastAPI', icon: <SiFastapi className="text-[#009688]" /> },
