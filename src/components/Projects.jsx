@@ -1,11 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import intranetImg from '../assets/intranet.png';
+import classmateImg from '../assets/classmate.png';
+import movieImg from '../assets/movie-service.png';
 
 const projects = [
   {
     title: 'College Intranet Portal',
     description: 'Centralized academic portal for managing coursework, timetables, and announcements with role-based access. Refactored the backend into modular, SOLID-compliant services and developed core frontend modules using React.js. (Dec 2025 – Present)',
     techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
+    image: intranetImg,
     github: '#',
     demo: '#'
   },
@@ -13,6 +17,7 @@ const projects = [
     title: 'ClassMate – Productivity Web App',
     description: 'Full-stack student productivity tool with chatbot, notes, tasks, and attendance modules. Developed in a team during a 2-month internship.',
     techStack: ['FastAPI', 'MongoDB', 'HTML/CSS', 'JavaScript'],
+    image: classmateImg,
     github: '#',
     demo: '#'
   },
@@ -20,6 +25,7 @@ const projects = [
     title: 'Movie Streaming Backend Service',
     description: 'Implemented advanced JPA relationships using join entity and composite keys. Enhanced API efficiency with JPQL aggregation queries and serialization fixes.',
     techStack: ['Java', 'Spring Boot', 'JPA/Hibernate', 'MySQL'],
+    image: movieImg,
     github: '#',
     demo: '#'
   }
@@ -48,10 +54,14 @@ const ProjectCard = ({ project }) => {
       variants={cardVariants}
       className="group relative h-full bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-all duration-300 hover:shadow-xl dark:hover:shadow-none"
     >
-      {/* Image Placeholder */}
+      {/* Project Image */}
       <div className="w-full aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent dark:from-slate-950/60 z-10" />
-        <span className="text-slate-400 dark:text-slate-500 font-bold text-sm tracking-wider uppercase z-20">Preview Image</span>
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+        />
         
         {/* Subtle hover overlay */}
         <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/5 dark:group-hover:bg-indigo-600/10 transition-colors duration-300 z-15" />
