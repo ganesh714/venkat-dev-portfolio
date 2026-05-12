@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import intranetImg from '../assets/intranet.png';
 import classmateImg from '../assets/classmate.png';
 import movieImg from '../assets/movie-service.png';
@@ -49,18 +49,27 @@ const cardVariants = {
 };
 
 const ProjectCard = ({ project }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+
   return (
     <motion.div
+      ref={ref}
       variants={cardVariants}
       className="group relative h-full bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-all duration-300 hover:shadow-xl dark:hover:shadow-none"
     >
       {/* Project Image */}
       <div className="w-full aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent dark:from-slate-950/60 z-10" />
-        <img 
+        <motion.img 
+          style={{ y }}
           src={project.image} 
           alt={project.title} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+          className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500" 
         />
         
         {/* Subtle hover overlay */}
@@ -119,8 +128,22 @@ const ProjectCard = ({ project }) => {
 };
 
 const Projects = () => {
+  const { scrollYProgress } = useScroll();
+  const yBg1 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const yBg2 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+
   return (
-    <section id="projects" className="py-24 bg-white dark:bg-slate-950 container mx-auto px-4">
+    <section id="projects" className="py-24 bg-white dark:bg-slate-950 container mx-auto px-4 relative overflow-hidden">
+      {/* Parallax Background Shapes */}
+      <motion.div 
+        style={{ y: yBg1 }}
+        className="absolute top-40 -left-20 w-80 h-80 bg-indigo-500/5 rounded-full blur-[100px] -z-10"
+      />
+      <motion.div 
+        style={{ y: yBg2 }}
+        className="absolute bottom-40 -right-20 w-80 h-80 bg-blue-500/5 rounded-full blur-[100px] -z-10"
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
