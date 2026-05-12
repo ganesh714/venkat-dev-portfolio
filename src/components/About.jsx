@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import avatar from '../assets/avatar.png';
 
 const bioText = "Full Stack Developer with expertise in Angular and React.js, focusing on modular system architecture, clean code practices, and system design. Experienced in building role-based web platforms, restructuring backend systems using SOLID principles, and delivering maintainable frontend modules. Familiar with AI-driven concepts such as Retrieval-Augmented Generation and agent-based workflows, with current focus on real-world development through internships and production projects.";
 
@@ -61,7 +62,11 @@ const About = () => {
           <div className="relative flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-3xl p-1 overflow-hidden group">
             <div className="absolute inset-0 bg-indigo-600/10 dark:bg-indigo-600/20" />
             <div className="absolute inset-[4px] rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-center z-10 overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-              <span className="text-slate-400 dark:text-slate-500 font-medium">Avatar Placeholder</span>
+              <img 
+                src={avatar} 
+                alt="Venkata Ganesh" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
             </div>
             {/* Subtle highlight */}
             <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 to-blue-500 opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-500" />
