@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const experiences = [
   {
@@ -24,8 +24,15 @@ const experiences = [
 ];
 
 const Experience = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleY = useSpring(useTransform(scrollYProgress, [0.3, 0.7], [0, 1]), {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
-    <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-950 container mx-auto px-4">
+    <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-950 container mx-auto px-4 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -46,8 +53,12 @@ const Experience = () => {
         </div>
 
         <div className="max-w-4xl mx-auto relative">
-          {/* Main timeline line for desktop */}
-          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-slate-200 dark:bg-slate-800 z-0"></div>
+          {/* Main timeline line for desktop - Parallax */}
+          <motion.div 
+            style={{ scaleY, transformOrigin: "top" }}
+            className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-indigo-600/30 dark:bg-indigo-400/30 z-0"
+          ></motion.div>
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-slate-200 dark:bg-slate-800/50 -z-10"></div>
 
           {experiences.map((exp, index) => (
             <motion.div 
